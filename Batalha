@@ -86,7 +86,7 @@ public class aguas {
 		boolean verifica = true;
 		int ataque = 0;
 		int ganhou = 0;
-		if(ataque < 30 || ganhou < 12){
+		while(ataque < 30 || ganhou < 12){
 			embarcacoes(agua);
 			//ataque++;
 			System.out.println();
