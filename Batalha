@@ -1,0 +1,103 @@
+//Wagner Alcantara
+package batalha;
+
+public class aguas {
+
+	/*public aguas() {
+		// TODO Auto-generated constructor stub
+	}*/
+
+	public static String[][] criarMat(){
+		
+		String[][] agua = new String[6][10];
+		
+			for(int i = 0; i < agua.length ; i++){
+				for( int j = 0 ; j < agua[i].length; j++){
+					agua[i][j] = "~";
+				}
+			}
+			return agua;
+	}
+	
+	public static void embarcacoes(String[][] agua){
+		
+		agua[1][1] = "*";
+		agua[3][2] = "*";
+		agua[3][3] = "*";
+		agua[5][1] = "*";
+		agua[5][2] = "*";
+		agua[4][4] = "*";
+		agua[4][5] = "*";
+		agua[4][6] = "*";
+		agua[2][6] = "*";
+		agua[2][7] = "*";
+		agua[2][8] = "*";
+		agua[2][9] = "*";
+		
+		 for (int i =0;i<agua.length;i++){
+		    for (int j=0;j<agua[i].length;j++){
+		      System.out.print(agua[i][j]);
+		    }
+		    System.out.println();
+		  }
+		
+	}
+	
+	public static verGanhador(String[][] agua){
+		
+	}
+	
+	
+	public static void jogada(String[][] agua){
+		
+		int lin = Console.leInt("Informe a linha: ");
+			if(lin < 0 || lin > 9){
+				lin = Console.leInt("Informe a linha: ");
+			}
+		int col = Console.leInt("Informe a Coluna: ");
+			if(col < 0 || col > 5){
+				col = Console.leInt("Informe a coluna: ");
+			}
+			
+			System.out.println(agua[lin][col]);
+			
+			//mostraMat(agua[lin][col]);
+		//if(agua[lin][col] == "")
+	}
+	
+		
+	public static void mostraMat(String[][] agua){
+	 
+	System.out.println("  0 1 2 3 4 5 6 7 8 9");	
+	for (int i =0; i < agua.length;i++ ){
+		System.out.print(i + " ");
+		for (int j=0 ; j < agua[i].length; j++){
+	      System.out.print(agua[i][j] + " ");
+	    }	    
+	    System.out.println();
+	  }
+	}
+	
+	
+
+	
+	public static void main(String[] args) {
+		String[][] agua = criarMat();
+		boolean verifica = true;
+		int ataque = 0;
+		int ganhou = 0;
+		if(ataque < 30 || ganhou < 12){
+			embarcacoes(agua);
+			//ataque++;
+			System.out.println();
+			System.out.println();
+			System.out.println();
+			jogada(agua);
+			ataque++;
+			mostraMat(agua);
+			System.out.println();
+			
+		//}System.out.println("Foi tudo");
+		}
+	}
+}
